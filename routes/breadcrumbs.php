@@ -36,3 +36,13 @@ Breadcrumbs::for('industri', function (BreadcrumbsTrail $trail) {
     $trail->parent('dashboard');
     $trail->push('Industri', route('dashboard.industri.table'));
 });
+
+Breadcrumbs::for('agenda', function (BreadcrumbsTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Agenda', route('dashboard.agenda.table'));
+});
+
+Breadcrumbs::for('penempatan', function (BreadcrumbsTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Penempatan', route('dashboard.penempatan.table'));
+});

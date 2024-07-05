@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\PenempatanController;
 use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
@@ -58,5 +60,19 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
         Route::post('create', [PerusahaanController::class, 'store'])->name('create');
         Route::post('update/{perusahaan}', [PerusahaanController::class, 'update'])->name('edit');
         Route::delete('delete/{perusahaan}', [PerusahaanController::class, 'destroy'])->name('delete');
+    });
+
+    Route::group(['prefix' => 'agenda', 'as' => 'agenda.'], function () {
+        Route::get('', [AgendaController::class, 'index'])->name('table');
+        Route::post('create', [AgendaController::class, 'store'])->name('create');
+        Route::post('update/{agenda}', [AgendaController::class, 'update'])->name('edit');
+        Route::delete('delete/{agenda}', [AgendaController::class, 'destroy'])->name('delete');
+    });
+
+    Route::group(['prefix' => 'penempatan', 'as' => 'penempatan.'], function() {
+        Route::get('', [PenempatanController::class, 'index'])->name('table');
+        Route::post('create', [PenempatanController::class, 'store'])->name('create');
+        Route::post('update/{penempatan}', [PenempatanController::class, 'update'])->name('edit');
+        Route::delete('delete/{penempatan}', [PenempatanController::class, 'destroy'])->name('delete');
     });
 });

@@ -12,7 +12,7 @@
                 <form action="{{ route('dashboard.jurusan.edit', $jurusan->id) }}" method="post" id="editForm-{{ $jurusan->id }}">
                     @csrf
                     <div class="form-group">
-                        <label for="name">name Jurusan</label>
+                        <label for="name">Nama Jurusan</label>
                         <input type="text" name="name" id="name" class="form-control" value="{{ $jurusan->name }}">
                     </div>
                 </form>

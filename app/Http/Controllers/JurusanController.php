@@ -34,6 +34,7 @@ class JurusanController extends Controller
      */
     public function update(UpdateJurusanRequest $request, Jurusan $jurusan)
     {
+        dd("ok");
         $jurusan->update($request->validated());
 
         toastr()->success('Data berhasil diperbarui');

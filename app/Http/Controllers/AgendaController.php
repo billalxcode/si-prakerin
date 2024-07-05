@@ -13,15 +13,9 @@ class AgendaController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $agendas = Agenda::all();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return view('admin.agenda.table', ['agendas' => $agendas]);
     }
 
     /**
@@ -29,23 +23,11 @@ class AgendaController extends Controller
      */
     public function store(StoreAgendaRequest $request)
     {
-        //
-    }
+        Agenda::create($request->validated());
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Agenda $agenda)
-    {
-        //
-    }
+        toastr()->success('Data berhasil disimpan');
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Agenda $agenda)
-    {
-        //
+        return redirect()->route('dashboard.agenda.table');
     }
 
     /**
@@ -53,7 +35,11 @@ class AgendaController extends Controller
      */
     public function update(UpdateAgendaRequest $request, Agenda $agenda)
     {
-        //
+        $agenda->update($request->validated());
+
+        toastr()->success('Data berhasil diperbarui');
+
+        return redirect()->route('dashboard.agenda.table');
     }
 
     /**
@@ -61,6 +47,10 @@ class AgendaController extends Controller
      */
     public function destroy(Agenda $agenda)
     {
-        //
+        $agenda->delete();
+
+        toastr()->success('Data berhasil dihapus');
+
+        return redirect()->route('dashboard.agenda.table');
     }
 }

@@ -8,11 +8,25 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('dashboard.jurusan.create') }}" method="post" id="createForm">
+                <form action="{{ route('dashboard.agenda.create') }}" method="post" id="createForm">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Nama Jurusan</label>
+                        <label for="name">Nama</label>
                         <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="start_date">Start Date</label>
+                                <input type="date" name="start_date" id="start_date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="end_date">End Date</label>
+                                <input type="date" name="end_date" id="end_date" class="form-control">
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
