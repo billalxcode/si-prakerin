@@ -3,9 +3,9 @@
 @section('content')
 <div class="content-wrapper">
     <div class="page-header">
-        <h3 class="page-title"> Jurusan </h3>
+        <h3 class="page-title"> Industri </h3>
         <nav aria-label="breadcrumb">
-            {{ Breadcrumbs::render('jurusan') }}
+            {{ Breadcrumbs::render('industri') }}
         </nav>
     </div>
     <div class="row">
@@ -25,7 +25,7 @@
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Jurusan table</h4>
+                    <h4 class="card-title">Industri table</h4>
                     <p class="card-description">Menampilkan semua data dalam bentuk table</code>
                     </p>
                     <div class="table-responsive">
@@ -33,18 +33,22 @@
                             <thead>
                                 <tr>
                                     <th> Name </th>
-                                    <th>Jumlah Kelas</th>
+                                    <th>Owner</th>
+                                    <th>Kontak</th>
+                                    <th>Jumlah Siswa</th>
                                     <th>Action </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($jurusans as $jurusan)
+                                @foreach ($perusahaans as $perusahaan)
                                     <tr>
-                                        <td> {{ $jurusan->name }} </td>
-                                        <td> {{ $jurusan->kelas()->count() }} </td>
+                                        <td> {{ $perusahaan->name }} </td>
+                                        <td> {{ $perusahaan->owner }} </td>
+                                        <td>{{ $perusahaan->kontak }}</td>
+                                        <td>-</td>
                                         <td>
-                                            <button class="btn btn-primary mx-1" data-toggle="modal" data-target="#editDataModal-{{ $jurusan->id }}"><i class="fa fa-edit"></i></button>
-                                            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteDataModal-{{ $jurusan->id }}"><i class="fa fa-trash"></i></button>
+                                            <button class="btn btn-primary mx-1" data-toggle="modal" data-target="#editDataModal-{{ $perusahaan->id }}"><i class="fa fa-edit"></i></button>
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteDataModal-{{ $perusahaan->id }}"><i class="fa fa-trash"></i></button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -59,9 +63,9 @@
 @endsection
 
 @section('modals')
-@include('admin.jurusan.modals.create')
-@foreach ($jurusans as $jurusan)
-    @include('admin.jurusan.modals.edit', ['jurusan' => $jurusan])
-    @include('admin.jurusan.modals.delete', ['jurusan' => $jurusan])
+@include('admin.perusahaan.modals.create')
+@foreach ($perusahaans as $perusahaan)
+    @include('admin.perusahaan.modals.edit', ['perusahaan' => $perusahaan])
+    @include('admin.perusahaan.modals.delete', ['perusahaan' => $perusahaan])
 @endforeach
 @endsection

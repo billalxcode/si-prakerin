@@ -26,3 +26,8 @@ Breadcrumbs::for('siswa', function (BreadcrumbsTrail $trail) {
     $trail->parent('home');
     $trail->push('Siswa', route('dashboard.siswa.table'));
 });
+
+Breadcrumbs::for('industri', function (BreadcrumbsTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Industri', route('dashboard.industri.table'));
+});
