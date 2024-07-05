@@ -21,6 +21,9 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.', 'middleware' => 'guest'], fun
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'auth'], function() {
     Route::redirect('', '/dashboard/home')->name('dashboard.home.redirect');
     Route::get('home', [DashboardController::class, 'index'])->name('home');
+    Route::get('donasi', function () {
+        return view('admin.donasi');
+    })->name('donasi');
 
     Route::group(['prefix' => 'jurusan', 'as' => 'jurusan.'], function() {
         Route::get('', [JurusanController::class, 'index'])->name('table');

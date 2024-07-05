@@ -44,7 +44,7 @@
                                     <tr>
                                         <td> {{ $perusahaan->name }} </td>
                                         <td> {{ $perusahaan->owner }} </td>
-                                        <td>{{ $perusahaan->kontak }}</td>
+                                        <td>{{ $perusahaan->contact }}</td>
                                         <td>-</td>
                                         <td>
                                             <button class="btn btn-primary mx-1" data-toggle="modal" data-target="#editDataModal-{{ $perusahaan->id }}"><i class="fa fa-edit"></i></button>

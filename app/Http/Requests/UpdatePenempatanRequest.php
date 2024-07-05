@@ -3,16 +3,15 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
-class UpdatePerusahaanRequest extends FormRequest
+class UpdatePenempatanRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return Auth::check();
+        return false;
     }
 
     /**
@@ -23,10 +22,7 @@ class UpdatePerusahaanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'contact' => 'required|string',
-            'address' => 'required|string',
-            'owner' => 'required|string'
+            //
         ];
     }
 }

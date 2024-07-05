@@ -19,35 +19,15 @@ class PerusahaanController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StorePerusahaanRequest $request)
     {
-        //
-    }
+        Perusahaan::create($request->validated());
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Perusahaan $perusahaan)
-    {
-        //
-    }
+        toastr()->success('Data berhasil disimpan');
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Perusahaan $perusahaan)
-    {
-        //
+        return redirect()->route('dashboard.industri.table');
     }
 
     /**
@@ -55,7 +35,11 @@ class PerusahaanController extends Controller
      */
     public function update(UpdatePerusahaanRequest $request, Perusahaan $perusahaan)
     {
-        //
+        $perusahaan->update($request->validated());
+
+        toastr()->success('Data berhasil diperbarui');
+
+        return redirect()->route('dashboard.industri.table');
     }
 
     /**
@@ -63,6 +47,10 @@ class PerusahaanController extends Controller
      */
     public function destroy(Perusahaan $perusahaan)
     {
-        //
+        $perusahaan->delete();
+
+        toastr()->success('Data berhasil dihapus');
+
+        return redirect()->route('dashboard.industri.table');
     }
 }

@@ -92,6 +92,14 @@
             </div>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" href="../../pages/tables/basic-table.html">
+                <span class="menu-icon">
+                    <i class="mdi mdi-table-large"></i>
+                </span>
+                <span class="menu-title">Agenda</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" href="../../pages/forms/basic_elements.html">
                 <span class="menu-icon">
                     <i class="mdi mdi-playlist-play"></i>
@@ -102,7 +110,7 @@
         <li class="nav-item menu-items">
             <a class="nav-link" href="../../pages/tables/basic-table.html">
                 <span class="menu-icon">
-                    <i class="mdi mdi-table-large"></i>
+                    <i class="mdi mdi-printer"></i>
                 </span>
                 <span class="menu-title">Surat Pengantar</span>
             </a>
@@ -117,7 +125,7 @@
         </li>
         <li class="nav-item menu-items">
             <a class="nav-link"
-                href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+                href="{{ route('dashboard.donasi') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-file-document-box"></i>
                 </span>

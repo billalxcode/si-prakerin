@@ -7,6 +7,11 @@ Breadcrumbs::for('home', function (BreadcrumbsTrail $trail) {
     $trail->push('Home', route('dashboard.home'));
 });
 
+Breadcrumbs::for('donasi', function (BreadcrumbsTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Donasi', route('dashboard.donasi'));
+});
+
 Breadcrumbs::for('jurusan', function (BreadcrumbsTrail $trail) {
     $trail->parent('home');
     $trail->push('Jurusan', route('dashboard.jurusan.table'));
